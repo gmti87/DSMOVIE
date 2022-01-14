@@ -11,17 +11,7 @@ type Props = {
 }
 
 function FormCard( { movieId } : Props) {
-
-    {/*
-    filme mocado 
-    const movie = {
-        id: 1,
-        image: "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg",
-        title: "The Witcher",
-        count: 2,
-        score: 4.5
-    };
-    */}
+    
     const navigate = useNavigate();
 
     const [movie, setMovie] = useState<Movie>();
@@ -40,8 +30,6 @@ function FormCard( { movieId } : Props) {
         const email = (event.target as any).email.value;
         const score = (event.target as any).score.value;
 
-        //console.log(email, score);
-
         if (!validateEmail(email)) {
             return;
         }
@@ -58,7 +46,6 @@ function FormCard( { movieId } : Props) {
         }
 
         axios(config).then(response => {
-            //console.log(response.data);
             navigate("/");
         })
     }
